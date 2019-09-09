@@ -11,7 +11,7 @@ import (
 	"github.com/reujab/wallpaper"
 )
 
-// Set wallpaper to nothing to fix issues
+// Set empty variable
 var IMAGE = ""
 
 //Main Process/window
