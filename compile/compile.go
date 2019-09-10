@@ -13,7 +13,7 @@ const (
 	_manifest = "manifest.xml"
 )
 
-var iconArg1, iconArg2, manifestArg1, manifestArg2 string
+var iconArg1, iconArg2, manifestArg1, manifestArg2, buildFile string
 var outbuf, errbuf bytes.Buffer
 
 func main() {
@@ -39,13 +39,19 @@ func main() {
 	CMDrsrc.Stdout = os.Stdout
 	rsrcErr := CMDrsrc.Run()
 	if rsrcErr != nil {
-		fmt.Println("rsrc.exe failed", rsrcErr)
+		fmt.Println("ERR: rsrc.exe failed")
+		log.Fatal(rsrcErr)
 	}
 
-	CMDbuild := exec.Command("go.exe", "build")
+	if len(os.Args) >= 2 {
+		buildFile = os.Args[1]
+	}
+	CMDbuild := exec.Command("go.exe", "build", buildFile)
+	CMDbuild.Stderr = os.Stderr
+	CMDbuild.Stdout = os.Stdout
 	buildErr := CMDbuild.Start()
 	if buildErr != nil {
-		fmt.Println("buildErr")
+		fmt.Println("ERR: go build failed")
 		log.Fatal(buildErr)
 	}
 

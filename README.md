@@ -1,11 +1,20 @@
 # Personal-Projects
+ ### Latest information
+   * Finnished `Code.go` rewrite
+   * Tweaked `compile.go` program a bit to return `go build` errors and allow specifying a single go file to build
+   * Updated Readme
+
+ ### Tools in this Repo 
  * Code.go
     A utility to launch VSCode portable from a PortableApps platform while setting the path enviroment for custom extensions
+    * Has gone through two rewrites
  * Home.go
-    A tool to find the root directory that mingw is installed
-    Uses the `mount` command to find the install path, 
+    * A tool to find the root directory that mingw is installed
+    Uses the `mount` command to find the install path,
+    I intend on making this program a library for msys2 projects using go
+      * This has gone through ONE complete rewrite
  * Wallpaper Tool
-    This utility is used to change the user's wallpaper. Originally designed for students who's
+    * This utility is used to change the user's wallpaper. Originally designed for students who's
     computer IT department have locked down the Wallpaper settings. This program bypasses the 
     blocked settings by directly calling (to my knowledge) `user32.dll` to apply the settings
     * Libraries used
@@ -17,13 +26,20 @@
      - [ ] Provide prebuilt binaries    
 
  * Compile
-    This utility makes compiling some exe programs easier, especially when embedding a icon. 
-    Default Golang icon comes with the source because i needed a icon to test it. Also lets you test it yourself
+    * This utility makes compiling some exe programs easier, especially when embedding a icon. 
+    Default Golang icon comes with the source because i needed a icon to test it. Also lets you test it yourself!
+    * USAGE!
+      * Just go into the root of your project, make sure there is a `manifest.xml` file, and run `compile`
+      * OR! if you want to compile a specific go file. `compile main.go`
     * DEPENDANCIES
       * [rsrc, used as the core of this entire program](https://github.com/akavel/rsrc)
     * How to install!
       * `go get github.com/Merith-TK/Personal-Projects/compile `
-
       * `go get https://github.com/akavel/rsrc`
 
-      FUN FACT! I actually build the binary of this program using `go run` due to how it behaves! 
+    * How to test? 
+      * This program is only validated to work on windows 7 and windows 10. How you can check to see if this program works. go to your GOPATH/bin folder and look for `compile.exe`, it should have a go-gopher icon.
+      This is how you test this program because i bundled the syso file, which was BUILT by this program. crazy i know. it was built by using `go run` on `compile.go`
+      
+
+      FUN FACT! I actually built the binary of this program as i was making it due to how it behaves! 
