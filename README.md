@@ -3,15 +3,7 @@
     A utility to launch VSCode portable from a PortableApps platform while setting the path enviroment for custom extensions
  * Home.go
     A tool to find the root directory that mingw is installed
-    * V1 relies upon the default `$HOME` directory being properly set and unchanged, 
-    * V2 (WIP) Will be using the `mount` command to find the install path, 
-    Working on isolating the first line as to only get `C:/msys64` as output
-      ```
-      $ mount
-      C:/msys64 on / type ntfs (binary,noacl,auto)
-      C:/msys64/usr/bin on /bin type ntfs (binary,noacl,auto)
-      C: on /c type ntfs (binary,noacl,posix=0,user,noumount,auto)
-      ```
+    Uses the `mount` command to find the install path, 
  * Wallpaper Tool
     This utility is used to change the user's wallpaper. Originally designed for students who's
     computer IT department have locked down the Wallpaper settings. This program bypasses the 
@@ -23,3 +15,11 @@
 
      - [ ] Set default window size
      - [ ] Provide prebuilt binaries    
+
+ * Compile
+    This utility makes compiling some exe programs easier, especially when embedding a icon. 
+    Default Golang icon comes with the source because i needed a icon to test it. Also lets you test it yourself
+    * Libraries used
+      * [rsrc, used as the core of this entire program](https://github.com/akavel/rsrc)
+
+      FUN FACT! I actually build the binary of this program using `go run` due to how it behaves! 
