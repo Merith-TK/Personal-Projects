@@ -3,25 +3,20 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
-	"path/filepath"
+	"os/exec"
+	"strings"
 )
 
-// Get Home variable path
-var home = os.Getenv("HOME")
-var err error
-
-// Get windows path of `$HOME/../../`
-var slash = filepath.Join(home, "./..", "./..")
-
 func main() {
-
-	// Tell it how to tell error
-	slash, err := filepath.Abs(slash)
+	out, err := exec.Command("mount").Output()
 	if err != nil {
 		log.Fatal(err)
 	}
-	
-	// Print Install Dir
-	fmt.Println("Install Dir:", slash)
+	lines := strings.Split(string(out), "\n")
+	for _, line := range lines {
+		if strings.Index(line, "on / type") != -1 {
+			line = strings.Replace(line, "on / type ntfs (binary,noacl,auto)", "", -1)
+			fmt.Println(line)
+		}
+	}
 }
