@@ -19,7 +19,11 @@
  * Compile
     This utility makes compiling some exe programs easier, especially when embedding a icon. 
     Default Golang icon comes with the source because i needed a icon to test it. Also lets you test it yourself
-    * Libraries used
+    * DEPENDANCIES
       * [rsrc, used as the core of this entire program](https://github.com/akavel/rsrc)
+    * How to install!
+      * `go get github.com/Merith-TK/Personal-Projects/compile `
+
+      * `go get https://github.com/akavel/rsrc`
 
       FUN FACT! I actually build the binary of this program using `go run` due to how it behaves! 
