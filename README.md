@@ -35,7 +35,7 @@
       * [rsrc, used as the core of this entire program](https://github.com/akavel/rsrc)
     * How to install!
       * `go get github.com/Merith-TK/Personal-Projects/compile `
-      * `go get https://github.com/akavel/rsrc`
+      * `go get github.com/akavel/rsrc`
 
     * How to test? 
       * This program is only validated to work on windows 7 and windows 10. How you can check to see if this program works. go to your GOPATH/bin folder and look for `compile.exe`, it should have a go-gopher icon.
