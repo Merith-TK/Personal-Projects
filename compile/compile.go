@@ -46,6 +46,7 @@ func main() {
 	if len(os.Args) >= 2 {
 		buildFile = os.Args[1]
 	}
+	fmt.Println("COMMAND:", "go.exe", "build", buildFile)
 	CMDbuild := exec.Command("go.exe", "build", buildFile)
 	CMDbuild.Stderr = os.Stderr
 	CMDbuild.Stdout = os.Stdout
