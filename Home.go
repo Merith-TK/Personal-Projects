@@ -15,7 +15,7 @@ func main() {
 	lines := strings.Split(string(out), "\n")
 	for _, line := range lines {
 		if strings.Index(line, "on / type") != -1 {
-			line = strings.Replace(line, "on / type ntfs (binary,noacl,auto)", "", -1)
+			line = strings.Replace(line, " on / type ntfs (binary,noacl,auto)", "", -1)
 			fmt.Println(line)
 		}
 	}
