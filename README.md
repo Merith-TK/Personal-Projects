@@ -1,8 +1,7 @@
 # Personal-Projects
  ### Latest information
-   * Finnished `Code.go` rewrite
-   * Tweaked `compile.go` program a bit to return `go build` errors and allow specifying a single go file to build
-   * Updated Readme
+ * fixed a issue with home.go to allow using the output as something you can actually cut off via `Prefix`
+ * Updated Readme
 
  ### Tools in this Repo 
  * Code.go
