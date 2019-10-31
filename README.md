@@ -4,9 +4,22 @@
  * Updated Readme
 
  ### Tools in this Repo 
- * Code.go
+ ~~* Code.go
     A utility to launch VSCode portable from a PortableApps platform while setting the path enviroment for custom extensions
-    * Has gone through two rewrites
+    * Has gone through two rewrites~~
+   * Launcher.go
+    A utility to run any executable with specific arguments and environment variables.
+    `example.json`
+    ```json
+    {
+      "application":"echo",
+      "applicationArgs":"Hello World",
+      "environment": {
+        "hello":"world!"
+      }
+    }
+    ```
+      * Replaces Code.go
  * Home.go
     * A tool to find the root directory that mingw is installed
     Uses the `mount` command to find the install path,
