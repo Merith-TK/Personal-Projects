@@ -19,7 +19,7 @@
   }
 }
 ```
-      * Replaces Code.go
+  * Replaces Code.go
  * Home.go
     * A tool to find the root directory that mingw is installed
     Uses the `mount` command to find the install path,
