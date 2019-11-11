@@ -10,16 +10,16 @@
    * Launcher.go
     A utility to run any executable with specific arguments and environment variables.
     `example.json`
-    ```json
-    {
-      "application":"echo",
-      "applicationArgs":"Hello World",
-      "environment": {
-        "hello":"world!"
-      }
-    }
-    ```
-      * Replaces Code.go
+```json
+{
+  "application":"echo",
+  "applicationArgs":"Hello World",
+  "environment": {
+    "hello":"world!"
+  }
+}
+```
+  * Replaces Code.go
  * Home.go
     * A tool to find the root directory that mingw is installed
     Uses the `mount` command to find the install path,
