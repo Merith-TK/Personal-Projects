@@ -32,22 +32,22 @@ func main() {
 	fmt.Println("LOG: manifest.xml found")
 	manifestArg1 = "-manifest"
 	manifestArg2 = "manifest.xml"
-	fmt.Println("COMMAND:", "rsrc.exe", iconArg1, iconArg2, manifestArg1, manifestArg2)
+	fmt.Println("COMMAND:", "rsrc", iconArg1, iconArg2, manifestArg1, manifestArg2)
 
-	CMDrsrc := exec.Command("rsrc.exe", iconArg1, iconArg2, manifestArg1, manifestArg2)
+	CMDrsrc := exec.Command("rsrc", iconArg1, iconArg2, manifestArg1, manifestArg2)
 	CMDrsrc.Stderr = os.Stderr
 	CMDrsrc.Stdout = os.Stdout
 	rsrcErr := CMDrsrc.Run()
 	if rsrcErr != nil {
-		fmt.Println("ERR: rsrc.exe failed")
+		fmt.Println("ERR: rsrc failed")
 		log.Fatal(rsrcErr)
 	}
 
 	if len(os.Args) >= 2 {
 		buildFile = os.Args[1]
 	}
-	fmt.Println("COMMAND:", "go.exe", "build", buildFile)
-	CMDbuild := exec.Command("go.exe", "build", buildFile)
+	fmt.Println("COMMAND:", "go", "build", buildFile)
+	CMDbuild := exec.Command("go", "build", buildFile)
 	CMDbuild.Stderr = os.Stderr
 	CMDbuild.Stdout = os.Stdout
 	buildErr := CMDbuild.Start()
