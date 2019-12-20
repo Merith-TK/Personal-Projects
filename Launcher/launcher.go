@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"strings"
 	"os"
 	"os/exec"
 )
@@ -33,14 +34,11 @@ func main() {
 		fmt.Println("ENV:", k, "=", v)
 	}
 
-	args := make([]string, 0)
-	if len(settings.ApplicationArgs) > 0 {
-		args = append(args, settings.ApplicationArgs)
-	}
+	args := strings.Split(settings.ApplicationArgs, " ")
 	cmd := exec.Command(settings.Application, args...)
 
 	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
-	cmd.Start()
+	cmd.Run()
 }

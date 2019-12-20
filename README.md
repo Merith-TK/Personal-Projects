@@ -1,6 +1,9 @@
 # Personal-Projects
  ### Latest information
- * fixed a issue with home.go to allow using the output as something you can actually cut off via `Prefix`
+ * reformated repo layout to support `go get` each program
+ * removed old wallpaper code
+ * fixed bug with launcher where you could only send one argument
+ * made a folder to store functions and resources to import with `github.com/Merith-TK/Personal-Projects/functions`
  * Updated Readme
 
  ### Tools in this Repo 
@@ -13,14 +16,14 @@
 ```json
 {
   "application":"echo",
-  "applicationArgs":"Hello World",
+  "applicationArgs":"| grep hello=world",
   "environment": {
     "hello":"world!"
   }
 }
 ```
   * Replaces Code.go
- * Home.go
+ * `functions/home.go`
     * A tool to find the root directory that mingw is installed
     Uses the `mount` command to find the install path,
     I intend on making this program a library for msys2 projects using go
@@ -38,6 +41,8 @@
      - [ ] Provide prebuilt binaries    
 
  * Compile
+    ### DISCLAIMER
+      * This tool was made to help me personally, i highly reccomend downloading and tweaking the tool to suit your needs. only tested on windows. it is in no way meant to to be used in production.
     * This utility makes compiling some exe programs easier, especially when embedding a icon. 
     Default Golang icon comes with the source because i needed a icon to test it. Also lets you test it yourself!
     * USAGE!

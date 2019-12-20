@@ -1,0 +1,7 @@
+{
+  "application":"echo",
+  "applicationArgs":"",
+  "environment": {
+    "hello":"world!"
+  }
+}
